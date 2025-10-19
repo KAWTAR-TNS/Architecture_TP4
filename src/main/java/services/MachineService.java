@@ -127,10 +127,11 @@ public class MachineService implements IDao<Machine> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            machines = session.getNamedQuery("findBetweenDate")
+            machines = session.createNamedQuery("findBetweenDate", Machine.class)
                     .setParameter("d1", d1)
                     .setParameter("d2", d2)
-                    .list();
+                    .getResultList();
+
             tx.commit();
         } catch (HibernateException e) {
             if(tx != null)

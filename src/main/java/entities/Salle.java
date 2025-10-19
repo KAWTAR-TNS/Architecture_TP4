@@ -4,7 +4,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "salles")
+@Table(name = "Salle")
 public class Salle {
 
     @Id
@@ -15,7 +15,8 @@ public class Salle {
     @OneToMany(mappedBy = "salle", fetch = FetchType.EAGER)
     private List<Machine> machines;
 
-    public Salle(String a1) {
+    public Salle(String code) {
+        this.code = code;
     }
 
     public Salle() {
