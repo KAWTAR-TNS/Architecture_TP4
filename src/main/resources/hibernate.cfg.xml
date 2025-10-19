@@ -5,12 +5,14 @@
         <property name="hibernate.dialect">
             org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">
-            com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/base?zeroDateTimeBehavior=convertToNull
+            com.mysql.cj.jdbc.Driver
         </property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/base?serverTimezone=UTC&amp;zeroDateTimeBehavior=convertToNull
+        </property>
+
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">votre_mot_de_passe
+        <property name="hibernate.connection.password">password
         </property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
