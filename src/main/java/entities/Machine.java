@@ -4,7 +4,6 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Machine")
 @NamedNativeQuery(name = "findBetweenDateNative", query = "select * from machine where dateAchat between :d1 and :d2", resultClass = Machine.class)
 @NamedQuery(name = "findBetweenDate", query = "from Machine where dateAchat between :d1 and :d2")
 public class Machine {
